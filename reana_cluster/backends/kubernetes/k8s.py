@@ -461,7 +461,7 @@ class KubernetesBackend(ReanaBackendABC):
         # Cannot use `k8s_corev1.read_namespaced_secret()` since
         # exact name of the token (e.g. 'default-token-8p260') is not know.
         secrets = self._corev1api.list_namespaced_secret(
-            'default', include_uninitialized='false')
+            'default')
 
         # Maybe debug print all secrets should not be enabled?
         # logging.debug(k8s_corev1.list_secret_for_all_namespaces())
